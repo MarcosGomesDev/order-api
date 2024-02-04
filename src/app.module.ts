@@ -7,15 +7,15 @@ import { Product } from './products/entities/product.entity';
 import { OrdersModule } from './orders/orders.module';
 import { Order } from './orders/entities/order.entity';
 import { OrderItem } from './orders/entities/order-item.entity';
-import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 import { AuthModule } from './auth/auth.module';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3306,
+      port: 3307,
       username: 'root',
       password: 'root',
       database: 'nest',
@@ -28,7 +28,7 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     RabbitmqModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController], //MVC  Model View Controller
   providers: [AppService],
 })
 export class AppModule {}
